@@ -1,0 +1,18 @@
+//Mixin for size properties
+@mixin sizes($primary-width, $primary-height) {
+  width: $primary-width;
+  height: $primary-height;
+}
+
+//Mixin for display prperties
+@mixin display-style(
+  $display: flex,
+  $align: center,
+  $justify: center,
+  $direction: row
+) {
+  display: $display;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}

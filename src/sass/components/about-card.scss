@@ -1,0 +1,71 @@
+.blue-bubble {
+  @include display-style($display: inline-flex);
+  width: auto;
+  max-width: 150px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 100px;
+  background-color: #5fb8ff;
+}
+
+.highlighted-text {
+  color: $primary-color;
+  font-weight: 600;
+}
+
+.card-content {
+  @include display-style($justify: space-around);
+  gap: 30px;
+  margin: 50px 0 0;
+
+  article {
+    width: 100%;
+    max-width: 30%;
+    font-size: 2.7rem;
+    font-weight: 500;
+    line-height: 3rem;
+    letter-spacing: -0.02em;
+  }
+}
+
+.card-img-text {
+  position: relative;
+  width: 100vw;
+  max-width: 400px;
+  height: 100vw;
+  max-height: 450px;
+  border-radius: 20px;
+  background-color: $primary-color;
+  padding: 0 20px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  p {
+    width: 60%;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 2.4rem;
+    letter-spacing: -0.02em;
+    color: $page-background-color;
+  }
+}
+
+.card-content:nth-child(2) {
+  flex-direction: row-reverse;
+
+  .card-img-text {
+    padding-right: 0;
+  }
+
+  .card-img-text p {
+    display: block;
+    margin-left: auto;
+  }
+}

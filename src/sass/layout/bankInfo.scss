@@ -1,0 +1,94 @@
+.bankInfo {
+  h1 {
+    padding-top: 50px;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 6rem;
+    letter-spacing: -0.03em;
+  }
+}
+
+.bankDatails-card--container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.bankDatails-card {
+  border-radius: 20px;
+  max-width: 380px;
+  min-width: 260px;
+  width: 100%;
+  position: relative;
+  height: 200px;
+}
+
+.backGroundImg {
+  width: 100%;
+  height: 100%;
+}
+
+.bank-logo {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.bank-details-container {
+  @include display-style($direction: column, $justify: space-around, $align: normal);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  color: $page-background-color;
+}
+
+.bank-logo-section {
+  @include display-style($justify: space-between);
+  padding: 0 20px;
+
+  span {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.bank-datails {
+  @include display-style($direction: column, $justify: flex-end, $align: normal);
+  padding: 0 20px;
+
+  span {
+    @include display-style($justify: normal);
+    gap: 10px;
+  }
+
+  .acnName {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 0em;
+    margin: 0;
+  }
+
+  .acnNumber {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 0em;
+  }
+}
+
+.acnNumber-icon {
+  @include display-style($justify: space-between);
+  width: 50%;
+}
