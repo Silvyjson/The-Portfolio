@@ -16,3 +16,22 @@
   justify-content: $justify;
   flex-direction: $direction;
 }
+
+@mixin display-grid($column: auto, $row: auto){
+  display: grid;
+  grid-template-columns: $column;
+  grid-template-rows: $row;
+}
+
+@mixin font-style(
+  $size: 16,
+  $weight: 400,
+  $line-height: 1rem,
+  $letter-space: 0em
+) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-space;
+}
+

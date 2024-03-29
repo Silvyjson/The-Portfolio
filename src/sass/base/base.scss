@@ -3,12 +3,74 @@ body {
   background-color: $page-background-color;
   margin: 0;
   padding: 0;
+  @include display-style();
+  transition: 2s ease;
 }
 
 * {
   box-sizing: border-box;
+  cursor: default;
 }
 
 html {
-  font-size: 50%;
+  font-size: 16px;
+
+  @include md {
+    font-size: 14px;
+  }
+}
+
+:is(h1, h2, h3, h4, h5, h6, p) {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+ul,
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+.main_section {
+  position: relative;
+  width: 1200px;
+
+  .container {
+    padding: 0 3rem;
+
+    @include md {
+      padding: 0 2rem;
+    }
+  }
+
+  h2 {
+    @include font-style(
+      $size: 3rem,
+      $weight: 600,
+      $line-height: 3rem,
+      $letter-space: 1rem
+    );
+    margin-bottom: 30px;
+
+    @include sm {
+      @include font-style(
+        $size: 2.5rem,
+        $weight: 600,
+        $line-height: 2rem,
+        $letter-space: 0.7rem
+      );
+    }
+  }
+
+  .section {
+    margin-top: 100px;
+  }
+
+  @include bp($bp: 1200px) {
+    width: 100vw;
+  }
 }

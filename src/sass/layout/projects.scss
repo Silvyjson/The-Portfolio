@@ -1,0 +1,94 @@
+.projects-container {
+  @include display-grid($column: auto auto auto, $row: auto);
+  gap: 30px;
+
+  @include bp(1010px) {
+    @include display-grid($column: auto auto, $row: auto);
+  }
+
+  @include bp(580px) {
+    @include display-grid($column: auto, $row: auto);
+  }
+}
+
+.projects-item {
+  position: relative;
+  min-width: 300px;
+  width: 100%;
+  aspect-ratio: 10/5;
+  perspective: 1000px;
+  transition: transform 5s ease;
+
+  @include bp(700px) {
+    min-width: 250px;
+  }
+
+  @include bp(580px) {
+    display: block;
+    margin: 0 auto;
+    width: 90%
+  }
+
+  img {
+    @include sizes($primary-width, $primary-height);
+  }
+}
+
+.projects-item:hover img,
+.projects-item:hover .projects-content {
+  transform: scale(1.1);
+}
+
+.font-awesome {
+  @include display-style();
+  gap: 20px;
+
+  .fa-icon {
+    @include display-style();
+    width: 40px;
+    height: 40px;
+    color: $dark-background-color;
+    background-color: $page-background-color;
+    font-size: 1rem;
+    transition: 0.5s ease-in-out;
+  }
+
+  .fa-icon:hover {
+    width: 100px;
+    border-radius: 10px;
+    color: $page-background-color;
+    background-color: $dark-background-color;
+  }
+}
+
+.tech-stack {
+  @include font-style();
+  @include display-style();
+  gap: 5px;
+
+  .tech:hover {
+    background-color: $page-background-color;
+    color: $dark-text-color;
+  }
+}
+
+.projects-content {
+  @include display-style($direction: column, $justify: space-between);
+  @include sizes($primary-width, $primary-height);
+  position: absolute;
+  top: 0;
+  gap: 10px;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  color: $primary-color;
+  background-color: rgba(92, 104, 116, 0.8);
+  text-align: center;
+  border: 8px groove $secondary-color;
+
+  p {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+}

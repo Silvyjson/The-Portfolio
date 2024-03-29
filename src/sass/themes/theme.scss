@@ -1,0 +1,77 @@
+.theme-btn {
+  @include display-style();
+  position: fixed;
+  top: 30%;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 5;
+  background-color: $dark-background-color;
+  color: $page-background-color;
+  transition: 5s ease;
+}
+
+.dark_mode {
+  color: $primary-color;
+  background-color: $dark-background-color;
+  transition: 2s ease;
+
+  .theme-btn {
+    background-color: $page-background-color;
+    color: $dark-background-color;
+  }
+
+  .menu-icon {
+    > * {
+      background-color: $page-background-color;
+    }
+  }
+
+  .nav_section {
+    background-color: $dark-background-color;
+    color: $primary-color;
+    transition: background-color 2s ease;
+
+    p {
+      border-color: $secondary-color;
+    }
+  }
+
+  .skills-item {
+    img {
+      background-color: $page-background-color;
+      border-radius: 50%;
+    }
+  }
+
+  .timeline-title {
+    h3 {
+      border-color: $secondary-color;
+    }
+  }
+
+  .border {
+    background-color: $secondary-color;
+  }
+
+  .contact-section {
+    address {
+      border-left-color: $secondary-color;
+    }
+  }
+
+  .contact_form {
+    input {
+      color: $primary-color;
+      border-bottom-color: $secondary-color;
+      border-left-color: $secondary-color;
+    }
+
+    button {
+      color: $secondary-color;
+      border-right-color: $secondary-color;
+      border-left-color: $secondary-color;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.testimonials-slide {
+  display: block;
+  margin: 100px auto;
+}
+
+.testimonial-item {
+  max-width: 350px;
+  width: 100%;
+  height: 320px;
+  padding: 20px;
+  text-align: center;
+  color: $dark-text-color;
+  box-shadow: $box-shadow;
+  border: 1px solid $secondary-color;
+  background-color: $secondary-color;
+}

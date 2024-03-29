@@ -1,0 +1,98 @@
+.contact-container {
+  @include display-style($justify: space-between);
+  @include sizes($primary-width, $primary-height);
+
+  @include bp(650px) {
+    @include display-style(
+      $direction: column,
+      $justify: space-between,
+      $align: normal
+    );
+    gap: 20px;
+
+    @include bp(650px) {
+      gap: 40px;
+    }
+  }
+
+  .contact-border {
+    @include display-style(
+      $direction: column,
+      $justify: space-between,
+      $align: normal
+    );
+    position: relative;
+    flex: 1;
+    border-left: 5px solid $dark-text-color;
+    height: 50vh;
+    padding-left: 40px;
+
+    @include bp(650px) {
+      @include display-style(
+        $direction: column,
+        $justify: space-between,
+        $align: normal
+      );
+      gap: 60px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .font-icons {
+      @include display-style;
+      position: absolute;
+      left: -23px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: $dark-text-color;
+      background-color: $secondary-color;
+    }
+
+    .icon-3 {
+      bottom: 0;
+    }
+  }
+}
+
+.quote {
+  @include font-style(
+    $size: 2.5rem,
+    $weight: 600,
+    $line-height: 3rem,
+    $letter-space: 0.5rem
+  );
+  text-align: center;
+  margin-top: 100px;
+
+  @include sm {
+    @include font-style(
+      $size: 2rem,
+      $weight: 600,
+      $line-height: 2rem,
+      $letter-space: 0.5rem
+    );
+  }
+}
+
+.footer-section {
+  @include display-style($justify: space-between);
+  margin-top: 100px;
+}
+
+.social_handle-container {
+  @include display-style;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 40px;
+
+  @include sm {
+    width: 20px;
+  }
+}

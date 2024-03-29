@@ -1,0 +1,108 @@
+.nav_section {
+  @include display-style($justify: space-between);
+  background-color: $page-background-color;
+  color: $dark-text-color;
+  padding: 5px 30px;
+  width: 1200px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  transition: background-color 2s ease;
+
+  @include bp($bp: 1200px) {
+    width: 100vw;
+    @include display-style($justify: space-evenly);
+  }
+
+  @include lg {
+    padding: 15px 30px;
+  }
+
+  @include md {
+    @include display-grid($column: auto auto, $row: 1fr);
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    gap: 10px;
+  }
+
+  .avatar-logo {
+    flex: 1;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border: 8px ridge $secondary-color;
+
+      @include md {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  menu {
+    @include display-style($justify: space-between);
+    gap: 25px;
+    flex: 3;
+    padding: 10px 0;
+
+    ul {
+      @include display-style();
+      gap: 25px;
+
+      @include lg {
+        gap: 20px;
+      }
+
+      @include md {
+        @include display-style($direction: column);
+        width: 100%;
+      }
+
+      li {
+        @include display-style();
+        transition: transform 1s ease;
+        width: 100%;
+      }
+
+      li:hover {
+        transform: scale(1.1);
+        font-weight: bolder;
+      }
+    }
+
+    @include md {
+      @include display-style($display: none, $direction: column);
+      gap: 15px;
+      grid-column: 1 / span 2;
+      border-top: 5px groove $secondary-color;
+      border-bottom: 5px groove $secondary-color;
+    }
+  }
+
+  p {
+    @include display-style();
+    width: 100px;
+    height: 40px;
+    border: 2px solid $primary-color;
+
+    @include md {
+      border: none;
+      width: 100%;
+      height: auto;
+    }
+  }
+  p:hover {
+    background-color: rgba(92, 104, 116, 0.5);
+
+    @include md {
+      background-color: transparent;
+      transform: scale(1.1);
+      font-weight: bolder;
+    }
+  }
+}
+
+.open_profile {
+  display: flex !important;
+}

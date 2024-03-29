@@ -1,0 +1,63 @@
+.service-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+
+  @include lg {
+    @include display-style($direction: column, $justify: normal);
+  }
+}
+
+.services-item {
+  @include display-grid($column: 2fr 0.5fr, $row: 1fr);
+  height: 200px;
+  padding: 15px 30px;
+  color: $dark-text-color;
+  background-color: $secondary-color;
+  box-shadow: $box-shadow;
+  border-radius: 20px;
+  transition: transform 2s ease;
+
+  @include lg {
+    width: 80%;
+  }
+
+  @include bp(500px) {
+    width: 95%;
+  }
+
+  img {
+    width: 100px;
+    aspect-ratio: 5/5;
+    border-radius: 30%;
+    box-shadow: $box-shadow;
+  }
+}
+
+.services-item:hover {
+  transform: scale(1.05);
+} 
+
+.service-details {
+  @include display-style($direction: column, $align: normal);
+  gap: 10px;
+  width: 95%;
+}
+
+.service-price {
+  @include display-style($justify: space-between);
+  grid-column: 1 / span 2;
+
+  .font-arrow-icon {
+    @include display-style;
+    border: 1px dashed $dark-text-color;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .font-arrow-icon:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: $secondary-color;
+  }
+}

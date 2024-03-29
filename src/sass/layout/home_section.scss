@@ -1,0 +1,122 @@
+.home-section {
+  @include display-style($direction: row, $justify: space-between);
+  padding-top: 130px;
+  gap: 20px;
+
+  @include lg {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+}
+
+.avatar {
+  position: relative;
+
+  img {
+    width: 400px;
+    aspect-ratio: 10/13;
+    border: 8px solid $secondary-color;
+    border-radius: 50%;
+
+    @include md {
+      max-width: 400px;
+      width: 100%;
+    }
+  }
+}
+
+.highlight {
+  position: absolute;
+  bottom: 70px;
+  left: 100px;
+  @include display-style();
+  width: 200px;
+  height: 40px;
+  color: $primary-color;
+  border: 2px solid $secondary-color;
+
+  @include sm {
+    left: 70px;
+  }
+
+  @include bp(400px) {
+    left: 60px;
+    max-width: 180px;
+    width: 100%;
+  }
+}
+
+.user-info {
+  @include display-style(
+    $direction: column,
+    $justify: space-between,
+    $align: normal
+  );
+  gap: 20px;
+
+  @include lg {
+    @include display-style(
+      $direction: column,
+      $justify: space-between,
+      $align: flex-end
+    );
+    text-align: right
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    @include font-style(
+      $size: 1rem,
+      $weight: 600,
+      $letter-space: 0.15rem
+    );
+  }
+
+  i {
+    @include font-style(
+      $size: 1rem,
+      $weight: 600,
+      $line-height: 2rem,
+      $letter-space: 0.2rem
+    );
+
+    @include md {
+      @include font-style(
+        $size: 0.9rem,
+        $weight: 600,
+        $line-height: 1.5rem,
+        $letter-space: 0.2rem
+      );
+    }
+  }
+
+  p {
+    @include md {
+      @include font-style(
+        $size: 0.9rem,
+        $weight: 400,
+        $line-height: 1.2rem,
+        $letter-space: 0em
+      );
+    }
+  }
+
+  div {
+    @include display-style();
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid $secondary-color;
+
+    @include lg {
+      align-self: center;
+    }
+  }
+
+  .download {
+    margin-left: 10px;
+  }
+}

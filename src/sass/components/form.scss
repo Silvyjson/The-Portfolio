@@ -1,85 +1,33 @@
-.inputFormStyle {
-  display: flex;
-  flex-direction: column;
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 30px;
 
-  label {
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: left;
-  }
-}
+    input {
+        @include font-style();
+        border: none;
+        height: 35px;
+        padding: 0 10px;
+        outline: none;
+        background-color: $transparent-color;
+        border-bottom: 5px solid $dark-text-color;
+        border-left: 5px solid $dark-text-color;
+    }
 
-.InputStle {
-  position: relative;
-  width: 400px;
-  height: 50px;
-  padding: 0 20px;
-  border-radius: 10px;
-  border: 1px solid #d7d7d7;
-}
+    :nth-child(4) {
+        height: 100px;
+    }
 
-.InputStle::placeholder {
-  font-size: 2rem;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  color: #d7d7d7;
-}
-
-.buttonStyle {
-  cursor: pointer;
-  width: 400px;
-  height: 50px;
-  border-radius: 10px;
-  background-color: $primary-color;
-  border: 1px solid $primary-color;
-  color: $page-background-color;
-}
-
-.newletter-section {
-  @include display-style($direction: column);
-
-  h1 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 5rem;
-    letter-spacing: -0.03em;
-  }
-
-  p {
-    width: 50%;
-    font-size: 2.2rem;
-    font-weight: 500;
-    line-height: 3rem;
-    letter-spacing: -0.03em;
-    text-align: center;
-  }
-}
-
-.nesletter-form {
-  @include display-style($direction: column);
-
-  gap: 20px;
-
-  div {
-    position: relative;
-    width: 100%;
-  }
-
-  input {
-    padding: 0 45px;
-  }
-}
-
-.mail-logo {
-  position: absolute;
-  left: 10px;
-  top: 13px;
-}
-
-.newsletterStyle::placeholder {
-  position: absolute;
-  top: 18px;
-  left: 45px;
+    button {
+        color: $dark-text-color;
+        display: block;
+        margin: 0 auto;
+        width: 20%;
+        height: 30px;
+        border: none;
+        background-color: $transparent-color;
+        border-right: 5px solid $dark-text-color;
+        border-left: 5px solid $dark-text-color;
+    }
 }
