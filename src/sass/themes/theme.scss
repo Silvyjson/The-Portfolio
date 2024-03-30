@@ -55,10 +55,8 @@
     background-color: $secondary-color;
   }
 
-  .contact-section {
-    address {
-      border-left-color: $secondary-color;
-    }
+  .contact-border {
+    border-left-color: $secondary-color;
   }
 
   .contact_form {

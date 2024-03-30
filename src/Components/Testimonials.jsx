@@ -16,8 +16,7 @@ const Testimonials = ({ user }) => {
     const breakpoint = initialScreenWidth - (index * 30 + index * breakpointIncrease);
     let slidesToShow = initialSlidesToShow - Math.floor(index * slideReductionFactor * 10) / 10;
     slidesToShow = slidesToShow < 1.2 ? 1.2 : slidesToShow;
-    slidesToShow = breakpoint <= 500 ? 1.1 : slidesToShow;
-    slidesToShow = breakpoint <= 480 ? 1 : slidesToShow;
+    slidesToShow = breakpoint <= 500 ? 1 : slidesToShow;
 
     return {
       breakpoint: breakpoint,
@@ -34,53 +33,9 @@ const Testimonials = ({ user }) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    swipe: true,
     responsive: responsiveSettings 
   };
-    // [
-    //   {
-    //     breakpoint: 1180,
-    //     settings: {
-    //       slidesToShow: 2.7,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 1110,
-    //     settings: {
-    //       slidesToShow: 2.3,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 950,
-    //     settings: {
-    //       slidesToShow: 2,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 820,
-    //     settings: {
-    //       slidesToShow: 1.7,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 710,
-    //     settings: {
-    //       slidesToShow: 1.5,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 650,
-    //     settings: {
-    //       slidesToShow: 1.3,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 520,
-    //     settings: {
-    //       slidesToShow: 1,
-    //     },
-    //   },
-    // ],
-
 
   return (
     <section className="testimonials-slide" id='testimonials'>

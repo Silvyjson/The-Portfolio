@@ -5,6 +5,7 @@ body {
   padding: 0;
   @include display-style();
   transition: 2s ease;
+  overflow-x: hidden;
 }
 
 * {
@@ -58,7 +59,7 @@ menu {
 
     @include sm {
       @include font-style(
-        $size: 2.5rem,
+        $size: 2.2rem,
         $weight: 600,
         $line-height: 2rem,
         $letter-space: 0.7rem

@@ -2,10 +2,19 @@
   @include display-style($justify: normal);
   flex-wrap: wrap;
   gap: 20px;
+  position: relative;
+
+  @include bp(1200px) {
+    padding-top: 50px;
+  }
 }
 
 .skills-item {
   position: relative;
+
+  @include bp(1200px) {
+    position: static;
+  }
 
   img {
     transition: transform 1s ease;
@@ -26,11 +35,26 @@
   aspect-ratio: 5/1;
   padding: 10px;
   z-index: 1;
+  padding: 8px 10px;
   color: $dark-text-color;
   background-color: $primary-color;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
+
+  @include bp(1200px) {
+    top: -18px;
+    left: 0;
+    border-radius: 50px;
+    width: 70%;
+    height: 55px;
+    padding: 10px;
+
+  }
+
+  @include bp(550px) {
+    width: 90%;
+  }
 
   i {
     display: flex;

@@ -9,4 +9,8 @@
   z-index: 5;
   pointer-events: none;
   border: 2px solid $secondary-color;
+
+  @include bp(650px) {
+    display: none;
+  }
 }

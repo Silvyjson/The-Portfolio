@@ -23,8 +23,8 @@
     );
     position: relative;
     flex: 1;
+    gap: 100px;
     border-left: 5px solid $dark-text-color;
-    height: 50vh;
     padding-left: 40px;
 
     @include bp(650px) {
@@ -33,7 +33,6 @@
         $justify: space-between,
         $align: normal
       );
-      gap: 60px;
     }
 
     article {
@@ -71,17 +70,25 @@
 
   @include sm {
     @include font-style(
-      $size: 2rem,
+      $size: 1.5rem,
       $weight: 600,
       $line-height: 2rem,
       $letter-space: 0.5rem
     );
+
+    margin-top: 50px;
   }
 }
 
 .footer-section {
   @include display-style($justify: space-between);
   margin-top: 100px;
+
+  @include sm {
+    @include display-style($direction: column-reverse);
+    gap: 10px;
+    margin-top: 50px;
+  }
 }
 
 .social_handle-container {
@@ -93,6 +100,6 @@
   width: 40px;
 
   @include sm {
-    width: 20px;
+    width: 25px;
   }
 }

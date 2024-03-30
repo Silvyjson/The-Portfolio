@@ -13,6 +13,10 @@ const Skills = ({ user }) => {
 
   const handleMouseOutIcon = (index) => {
     overlayContentRefs.current[index].style.display = "none";
+    if (window.innerWidth <= 1200) {
+      overlayContentRefs.current[0].style.display = 'block';
+    }
+
   };
 
   return (

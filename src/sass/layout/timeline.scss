@@ -107,6 +107,8 @@
 .timeline-details {
   flex: 2;
 
-  @include lg {
+  ul {
+    padding: 10px 0;
+    padding-left: 50px;
   }
 }

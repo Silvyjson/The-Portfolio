@@ -22,7 +22,8 @@
     @include display-grid($column: auto auto, $row: 1fr);
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 0;
+    padding-top: 15px;
     gap: 10px;
   }
 
