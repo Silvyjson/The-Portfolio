@@ -36,7 +36,7 @@ function Contact({ user }) {
                     <input type="text" placeholder="Name" required />
                     <input type="email" placeholder="Email" required />
                     <input type="text" placeholder="Phone" required />
-                    <input type="text" placeholder="Message" required />
+                    <textarea placeholder="Message" required />
                     <button>SEND</button>
                 </form>
             </div>

@@ -66,6 +66,11 @@
       border-left-color: $secondary-color;
     }
 
+    textarea {
+      border-bottom-color: $secondary-color;
+      border-left-color: $secondary-color;
+    }
+
     button {
       color: $secondary-color;
       border-right-color: $secondary-color;

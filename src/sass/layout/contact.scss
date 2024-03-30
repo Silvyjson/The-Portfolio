@@ -70,13 +70,24 @@
 
   @include sm {
     @include font-style(
-      $size: 1.5rem,
+      $size: 2rem,
       $weight: 600,
       $line-height: 2rem,
       $letter-space: 0.5rem
     );
-
+    width: 100%;
     margin-top: 50px;
+
+    blockquote {
+      @include font-style(
+        $size: 1.8rem,
+        $weight: 600,
+        $line-height: 2rem,
+        $letter-space: 0.5rem
+      );
+      width: 100%;
+      margin: 0;
+    }
   }
 }
 
