@@ -1,12 +1,35 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Social_Handle from "./Others component/Social_handle";
+import { motion } from 'framer-motion';
 
 function Contact({ user }) {
     const { about, email } = user;
 
+    const fadeInAnimationVariants = {
+        initial: {
+            opacity: 0,
+            y: 50,
+        },
+        animate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 0.5,
+                duration: 2,
+            }
+        }
+    }
+
     return (
-        <section className="section" id="contact">
+        <motion.section className="section" id="contact"
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+                once: true,
+            }}
+        >
             <h2>Get in touch</h2>
             <div className="contact-container">
                 <div className="contact-border">
@@ -45,7 +68,7 @@ function Contact({ user }) {
                 <blockquote>{about.quote}</blockquote>
             </div>
             <Social_Handle user={user} />
-        </section>
+        </motion.section>
     );
 }
 

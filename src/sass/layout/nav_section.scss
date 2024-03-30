@@ -62,7 +62,6 @@
 
       li {
         @include display-style();
-        transition: transform 1s ease;
         width: 100%;
       }
 

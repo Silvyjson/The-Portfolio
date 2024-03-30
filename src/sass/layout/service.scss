@@ -16,7 +16,6 @@
   background-color: $secondary-color;
   box-shadow: $box-shadow;
   border-radius: 20px;
-  transition: transform 2s ease;
 
   @include lg {
     width: 80%;
@@ -33,10 +32,6 @@
     box-shadow: $box-shadow;
   }
 }
-
-.services-item:hover {
-  transform: scale(1.05);
-} 
 
 .service-details {
   @include display-style($direction: column, $align: normal);

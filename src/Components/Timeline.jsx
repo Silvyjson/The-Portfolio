@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -83,25 +84,61 @@ const Timeline = ({ user }) => {
     setShowEducation(true);
   };
 
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.5,
+        duration: 2
+      }
+    }
+  }
+
   return (
     <section className="section" id='timeline'>
-      <div className='min-550'>
+      <motion.div className='min-550'
+        variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{
+          once: true,
+        }}
+      >
         <div className='timeline-title'>
           <h3 onClick={handleGetExperience}>Experience</h3>
           <h3 onClick={handleGetEducation}>Education</h3>
         </div>
         {showExperience && <ExperienceTimeline experienceTimeline={experienceTimeline} />}
         {showEducation && <EducationTimeline educationTimeline={educationTimeline} />}
-      </div>
+      </motion.div>
       <div className='max-550'>
-        <span>
+        <motion.span
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+        >
           <h2> Experience</h2>
           <ExperienceTimeline experienceTimeline={experienceTimeline} />
-        </span>
-        <span>
+        </motion.span>
+        <motion.span
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+        >
           <h2>Education</h2>
           <EducationTimeline educationTimeline={educationTimeline} />
-        </span>
+        </motion.span>
       </div>
     </section>
   );

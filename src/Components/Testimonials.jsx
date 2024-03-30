@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { motion } from 'framer-motion';
 
 const Testimonials = ({ user }) => {
   const { testimonials } = user;
@@ -9,8 +10,8 @@ const Testimonials = ({ user }) => {
 
   const initialSlidesToShow = 3;
   const initialScreenWidth = 1200;
-  const slideReductionFactor = 0.2; 
-  const breakpointIncrease = 40; 
+  const slideReductionFactor = 0.2;
+  const breakpointIncrease = 40;
 
   const responsiveSettings = Array.from({ length: 12 }).map((_, index) => {
     const breakpoint = initialScreenWidth - (index * 30 + index * breakpointIncrease);
@@ -34,11 +35,33 @@ const Testimonials = ({ user }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     swipe: true,
-    responsive: responsiveSettings 
+    responsive: responsiveSettings
   };
 
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.5,
+        duration: 2,
+      }
+    }
+  }
+
   return (
-    <section className="testimonials-slide" id='testimonials'>
+    <motion.section className="testimonials-slide" id='testimonials'
+      variants={fadeInAnimationVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+    >
       <h2>Testimonials</h2>
       <Slider {...settings}>
         {enabledTestimonials.map(testimonial => (
@@ -50,7 +73,7 @@ const Testimonials = ({ user }) => {
           </div>
         ))}
       </Slider>
-    </section>
+    </motion.section>
   );
 };
 

@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   @include display-style();
-  transition: 2s ease;
+  transition: background-color 2s ease;
   overflow-x: hidden;
 }
 

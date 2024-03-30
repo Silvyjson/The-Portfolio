@@ -9,13 +9,12 @@
   z-index: 5;
   background-color: $dark-background-color;
   color: $page-background-color;
-  transition: 5s ease;
 }
 
 .dark_mode {
   color: $primary-color;
   background-color: $dark-background-color;
-  transition: 2s ease;
+  transition: background-color 2s ease;
 
   .theme-btn {
     background-color: $page-background-color;
@@ -31,7 +30,6 @@
   .nav_section {
     background-color: $dark-background-color;
     color: $primary-color;
-    transition: background-color 2s ease;
 
     p {
       border-color: $secondary-color;
