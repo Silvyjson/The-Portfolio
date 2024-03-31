@@ -1,64 +1,31 @@
 .skills-content {
-  @include display-style($justify: normal);
-  flex-wrap: wrap;
-  gap: 20px;
-  position: relative;
+  @include display-grid($column: auto auto auto, $row: auto);
+  gap: 30px;
 
-  @include bp(1200px) {
-    padding-top: 50px;
+  @include bp(1010px) {
+    @include display-grid($column: auto auto, $row: auto);
   }
+
+  @include bp(580px) {
+    @include display-grid($column: auto, $row: auto);
+  }
+}
+
+.skill-icon {
+  @include display-style($justify: normal);
+  gap: 5px;
+  width: 100%;
 }
 
 .skills-item {
-  position: relative;
-
-  @include bp(1200px) {
-    position: static;
-  }
-
-  img {
-    transition: transform 1s ease;
-  }
-
-  img:hover {
-    transform: scale(1.1);
-  }
-}
-
-.skill-set {
   @include display-style($direction: column);
-  position: absolute;
-  display: none;
-  top: -100%;
-  left: 20px;
-  width: 200px;
-  aspect-ratio: 5/1;
-  padding: 10px;
-  z-index: 1;
-  padding: 8px 10px;
-  color: $dark-text-color;
-  background-color: $primary-color;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  gap: 10px;
+  width: 100%;
 
-  @include bp(1200px) {
-    top: -18px;
-    left: 0;
-    border-radius: 50px;
-    width: 70%;
-    height: 55px;
-    padding: 10px;
-
-  }
-
-  @include bp(550px) {
-    width: 90%;
-  }
-
-  i {
-    display: flex;
-    justify-content: space-between;
+  i{
+    @include display-style($justify: space-between);
+    width: 100%;
+    padding: 0 15px;
   }
 
   meter {
@@ -71,6 +38,6 @@
   }
 
   meter::-webkit-meter-optimum-value {
-    background: $secondary-color;
+    background: #DE6449;
   }
 }

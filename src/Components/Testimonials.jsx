@@ -3,10 +3,18 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { motion } from 'framer-motion';
+import starRate from '../assets/image/star-icon.png';
+import quoteIcon from '../assets/image/quote-icon.png';
+import profileGirl1 from '../assets/image/profile-girl-1.jpg';
+import profileBoy1 from '../assets/image/profile-boy-1.jpg';
+import profileGirl2 from '../assets/image/profile-girl-2.webp';
+import profileBoy2 from '../assets/image/profile-boy-2.jpg';
+import profileGirl3 from '../assets/image/profile-girl-3.jpg';
 
 const Testimonials = ({ user }) => {
   const { testimonials } = user;
   const enabledTestimonials = testimonials.filter(testimonial => testimonial.enabled);
+  const profileImg = [profileGirl1, profileBoy1, profileGirl2, profileBoy2, profileGirl3]
 
   const initialSlidesToShow = 3;
   const initialScreenWidth = 1200;
@@ -64,12 +72,21 @@ const Testimonials = ({ user }) => {
     >
       <h2>Testimonials</h2>
       <Slider {...settings}>
-        {enabledTestimonials.map(testimonial => (
+        {enabledTestimonials.map((testimonial, index) => (
           <div key={testimonial._id} className="testimonial-item">
-            <img src={testimonial.image.url} alt={testimonial.name} width={50} />
-            <h3>{testimonial.name}</h3>
-            <p>{testimonial.review}</p>
-            <p>{testimonial.position}</p>
+            <div>
+              <img src={quoteIcon} alt="quote" className='quotes-icon' />
+              <span className='testimonial-profile'>
+                <img src={profileImg[index % profileImg.length]} alt="profile img" />
+                <hgroup>
+                  <h3>{testimonial.name}</h3>
+                  <h5>{testimonial.position}</h5>
+                </hgroup>
+              </span>
+              <p>{testimonial.review}</p>
+              <img src={starRate} alt="star" width={100} />
+              <img src={testimonial.image.url} alt={testimonial.name} width={30} className='p-logo' />
+            </div>
           </div>
         ))}
       </Slider>

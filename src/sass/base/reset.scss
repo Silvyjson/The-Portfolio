@@ -32,7 +32,6 @@
 }
 
 .Load-page {
-  // background-color: $dark-background-color;
   @include display-style;
   height: 100vh;
   width: 100vw;
@@ -75,3 +74,9 @@
   }
 }
 
+.error {
+  @include display-style;
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+}

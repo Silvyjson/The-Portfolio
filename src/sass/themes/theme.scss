@@ -52,28 +52,4 @@
   .border {
     background-color: $secondary-color;
   }
-
-  .contact-border {
-    border-left-color: $secondary-color;
-  }
-
-  .contact_form {
-    input {
-      color: $primary-color;
-      border-bottom-color: $secondary-color;
-      border-left-color: $secondary-color;
-    }
-
-    textarea {
-      color: $primary-color;
-      border-bottom-color: $secondary-color;
-      border-left-color: $secondary-color;
-    }
-
-    button {
-      color: $secondary-color;
-      border-right-color: $secondary-color;
-      border-left-color: $secondary-color;
-    }
-  }
 }

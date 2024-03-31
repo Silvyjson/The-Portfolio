@@ -1,116 +1,142 @@
 .contact-container {
   @include display-style($justify: space-between);
-  @include sizes($primary-width, $primary-height);
+  height: 65vh;
+  border-radius: 12px;
+  margin: 0;
 
-  @include bp(650px) {
+  @include lg {
     @include display-style(
       $direction: column,
       $justify: space-between,
+      $align: normal
+    );
+    height: 100%;
+    gap: 20px;
+  }
+}
+
+.contact-section {
+  margin-bottom: 20px;
+}
+
+.form-section {
+  @include display-style(
+    $direction: column,
+    $justify: space-between,
+    $align: normal
+  );
+  background-color: $primary-color;
+  color: $dark-text-color;
+  height: 450px;
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 12px;
+  flex: 0.8;
+
+  @include md {
+    width: 100%;
+  }
+}
+
+.contact-border {
+  @include display-style(
+    $direction: column,
+    $justify: space-between,
+    $align: normal
+  );
+  height: 100%;
+
+  @include lg {
+    gap: 50px;
+  }
+
+  h1 {
+    flex: 1;
+
+    @include font-style(
+      $size: 1.9rem,
+      $weight: 600,
+      $line-height: 2rem,
+      $letter-space: 0rem
+    );
+
+    @include md {
+      font-size: 1.8rem;
+    }
+
+    b {
+      color: $highlight-color;
+    }
+  }
+
+  article {
+    @include display-style(
+      $direction: column,
+      $justify: normal,
       $align: normal
     );
     gap: 20px;
 
-    @include bp(650px) {
-      gap: 40px;
+    @include lg {
+      @include display-style($justify: normal, $align: normal);
     }
-  }
 
-  .contact-border {
-    @include display-style(
-      $direction: column,
-      $justify: space-between,
-      $align: normal
-    );
-    position: relative;
-    flex: 1;
-    gap: 100px;
-    border-left: 5px solid $dark-text-color;
-    padding-left: 40px;
-
-    @include bp(650px) {
+    @include md {
       @include display-style(
         $direction: column,
-        $justify: space-between,
+        $justify: normal,
         $align: normal
       );
     }
 
-    article {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
+    span {
+      @include display-style($justify: normal);
+      gap: 15px;
+      border: 1px solid $primary-color;
+      width: 250px;
+      height: 50px;
+      border-radius: 12px;
+      padding: 10px;
     }
 
-    .font-icons {
-      @include display-style;
-      position: absolute;
-      left: -23px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      color: $dark-text-color;
-      background-color: $secondary-color;
-    }
-
-    .icon-3 {
-      bottom: 0;
+    span:hover {
+      background-color: rgba(255, 255, 255, 0.3);
     }
   }
 }
 
-.quote {
-  @include font-style(
-    $size: 2.5rem,
-    $weight: 600,
-    $line-height: 3rem,
-    $letter-space: 0.5rem
-  );
-  text-align: center;
-  margin-top: 100px;
-
-  @include sm {
-    @include font-style(
-      $size: 2rem,
-      $weight: 600,
-      $line-height: 2rem,
-      $letter-space: 0.5rem
-    );
-    width: 100%;
-    margin-top: 50px;
-
-    blockquote {
-      @include font-style(
-        $size: 1.8rem,
-        $weight: 600,
-        $line-height: 2rem,
-        $letter-space: 0.5rem
-      );
-      width: 100%;
-      margin: 0;
-    }
-  }
-}
-
-.footer-section {
-  @include display-style($justify: space-between);
-  margin-top: 100px;
-
-  @include sm {
-    @include display-style($direction: column-reverse);
-    gap: 10px;
-    margin-top: 50px;
-  }
+.contact-font-icon {
+  color: #de6449;
 }
 
 .social_handle-container {
-  @include display-style;
-  gap: 20px;
+  @include display-style($justify: normal, $align: flex-end);
+  gap: 30px;
+  flex: 1;
+
+  @include lg {
+    align-items: center;
+  }
 }
 
 .social-icon {
-  width: 40px;
+  width: 30px;
 
   @include sm {
     width: 25px;
   }
+}
+
+.quote {
+  @include display-style;
+  letter-spacing: 0.1em;
+  width: 250px;
+  height: 50px;
+  margin: 0;
+  color: $primary-color;
+  background-color: $highlight-color;
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  align-self: flex-end;
 }

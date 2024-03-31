@@ -34,11 +34,6 @@
   }
 }
 
-.projects-item:hover img,
-.projects-item:hover .projects-content {
-  transform: scale(1.1);
-}
-
 .font-awesome {
   @include display-style();
   gap: 20px;

@@ -1,41 +1,40 @@
 .contact_form {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
 
-    input {
-        @include font-style();
-        border: none;
-        height: 35px;
-        padding: 0 10px;
-        outline: none;
-        background-color: $transparent-color;
-        border-bottom: 5px solid $dark-text-color;
-        border-left: 5px solid $dark-text-color;
-    }
+  textarea,
+  input {
+    @include font-style();
+    border: none;
+    height: 35px;
+    width: 100%;
+    padding: 0 10px;
+    outline: none;
+    background-color: $transparent-color;
+    border-bottom: 3px solid $highlight-color;
 
-    textarea {
-        @include font-style();
-        border: none;
-        height: 100px;
-        padding: 0 10px;
-        outline: none;
-        resize: none;
-        background-color: $transparent-color;
-        border-bottom: 5px solid $dark-text-color;
-        border-left: 5px solid $dark-text-color;
+    @include md {
+      width: 100%;
     }
+  }
 
-    button {
-        color: $gray-text-color;
-        display: block;
-        margin: 0 auto;
-        width: 20%;
-        height: 30px;
-        border: none;
-        background-color: $transparent-color;
-        border-right: 5px solid $dark-text-color;
-        border-left: 5px solid $dark-text-color;
+  textarea {
+    height: 50px;
+    resize: none;
+  }
+
+  button {
+    color: $primary-color;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background-color: $highlight-color;
+
+    i {
+      margin-left: 10px;
     }
+  }
 }

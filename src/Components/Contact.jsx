@@ -22,7 +22,7 @@ function Contact({ user }) {
     }
 
     return (
-        <motion.section className="section" id="contact"
+        <motion.section className="section contact-section" id="contact"
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
@@ -30,44 +30,37 @@ function Contact({ user }) {
                 once: true,
             }}
         >
-            <h2>Get in touch</h2>
+            <h2>Contact</h2>
             <div className="contact-container">
                 <div className="contact-border">
+                    <h1>Let's discuss on something <b>cool</b> together</h1>
                     <article>
-                        <span className="font-icons icon-1">
-                            <FontAwesomeIcon icon=" fa-location-dot" />
+                        <span>
+                            <FontAwesomeIcon icon=" fa-location-dot" className="contact-font-icon" />
+                            <p>{about.address}</p>
                         </span>
-                        <h3>Location</h3>
-                        <p>{about.address}</p>
-                    </article>
-                    <article>
-                        <span className="font-icons icon-2">
-                            <FontAwesomeIcon icon="fa-phone" />
+                        <span>
+                            <FontAwesomeIcon icon="fa-phone" className="contact-font-icon" />
+                            <p>{about.phoneNumber}</p>
                         </span>
-                        <h3> Phone</h3>
-                        <p>{about.phoneNumber}</p>
-                    </article>
-                    <article>
-                        <span className="font-icons icon-3">
-                            <FontAwesomeIcon icon="fa-envelope" />
+                        <span>
+                            <FontAwesomeIcon icon="fa-envelope" className="contact-font-icon" />
+                            <p>{email}</p>
                         </span>
-                        <h3>Mail</h3>
-                        <p>{email}</p>
                     </article>
+                    <Social_Handle user={user} />
                 </div>
-                <form className="contact_form">
-                    <input type="text" placeholder="Name" required />
-                    <input type="email" placeholder="Email" required />
-                    <input type="text" placeholder="Phone" required />
-                    <textarea placeholder="Message" required />
-                    <button>SEND</button>
-                </form>
+                <div className="form-section">
+                    <blockquote className="quote">"{about.quote},,</blockquote>
+                    <form className="contact_form">
+                        <input type="text" placeholder="Name" required />
+                        <input type="email" placeholder="Email" required />
+                        <input type="text" placeholder="Phone" required />
+                        <textarea placeholder="Message" required />
+                        <button><FontAwesomeIcon icon="fa-solid fa-paper-plane" /><i>Send</i></button>
+                    </form>
+                </div>
             </div>
-            <div className="quote">
-                <h2>Quote""</h2>
-                <blockquote>{about.quote}</blockquote>
-            </div>
-            <Social_Handle user={user} />
         </motion.section>
     );
 }

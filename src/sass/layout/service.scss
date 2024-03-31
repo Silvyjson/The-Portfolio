@@ -1,47 +1,64 @@
 .service-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   gap: 30px;
 
-  @include lg {
-    @include display-style($direction: column, $justify: normal);
+  @include bp(1010px) {
+    grid-template-columns: auto auto;
+  }
+
+  @include md {
+    @include display-style($align: normal, $justify: normal);
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: mandatory;
   }
 }
 
 .services-item {
-  @include display-grid($column: 2fr 0.5fr, $row: 1fr);
-  height: 200px;
-  padding: 15px 30px;
+  @include display-style($direction: column, $justify: normal);
   color: $dark-text-color;
-  background-color: $secondary-color;
+  width: 320px;
   box-shadow: $box-shadow;
-  border-radius: 20px;
+  scroll-snap-align: center;
+}
 
-  @include lg {
-    width: 80%;
-  }
-
-  @include bp(500px) {
-    width: 100%;
-  }
+.service-img {
+  background-color: $primary-color;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  height: 220px;
 
   img {
-    width: 100px;
-    aspect-ratio: 5/5;
-    border-radius: 30%;
+    @include sizes($primary-width, $primary-height);
     box-shadow: $box-shadow;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 }
 
 .service-details {
   @include display-style($direction: column, $align: normal);
   gap: 10px;
-  width: 95%;
+  z-index: 1;
+  padding: 20px;
+  width: 320px;
+  height: 180px;
+  box-shadow: $box-shadow;
+  background-color: $primary-color;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  article {
+    @include display-style($direction: column, $align: normal);
+    gap: 10px;
+  }
 }
 
 .service-price {
   @include display-style($justify: space-between);
-  grid-column: 1 / span 2;
 
   .font-arrow-icon {
     @include display-style;

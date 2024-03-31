@@ -36,17 +36,21 @@ const Service = ({ user }) => {
                         }}
                         custom={index}
                     >
-                        <article className='service-details'>
-                            <h3 className='service-name'>{services.name}</h3>
-                            <p>{services.desc}</p>
-                        </article>
-                        <img src={services.image.url} alt={services.name} />
-                        <span className='service-price'>
-                            <p>{services.charge}</p>
-                            <span className='font-arrow-icon'>
-                                <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                        <div className='service-img'>
+                            <img src={services.image.url} alt={services.name} />
+                        </div>
+                        <div className='service-details'>
+                            <article className='service-name'>
+                                <h3>{services.name}</h3>
+                                <p>{services.desc}</p>
+                            </article>
+                            <span className='service-price'>
+                                <h3>{services.charge}</h3>
+                                <span className='font-arrow-icon'>
+                                    <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </motion.div>
                 ))}
             </div>

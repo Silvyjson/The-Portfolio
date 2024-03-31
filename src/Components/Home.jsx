@@ -9,6 +9,7 @@ import NavSection from './NavSection';
 import ThemeSet from './Others component/ThemeSet';
 import Contact from './Contact';
 import Cursor from './Others component/Cursor';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Home() {
   const [data, setData] = useState(null);
@@ -51,7 +52,7 @@ function Home() {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div className='error'><FontAwesomeIcon icon="fa-solid fa-triangle-exclamation" /> {error.message}</div>;
   }
 
   return (
