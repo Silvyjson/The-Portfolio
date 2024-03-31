@@ -27,8 +27,8 @@ function About({ user }) {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 1,
-        duration: 2
+        delay: 0.5,
+        duration: 1
       }
     }
   }

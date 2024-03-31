@@ -12,14 +12,27 @@ const Service = ({ user }) => {
             opacity: 0,
             y: 50,
         },
-        animate: (index) => ({
-            y: 0,
-            opacity: 1,
-            transition: {
-                delay: 0.1 * index,
-                duration: 1,
+        animate: (index) => {
+            if (0.1 * index >= 0.5) {
+                return {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                        delay: 0.5,
+                        duration: 1,
+                    }
+                }
+            } else {
+                return {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                        delay: 0.1 * index,
+                        duration: 1,
+                    }
+                }
             }
-        })
+        }
     }
 
     return (

@@ -2,9 +2,12 @@
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 30px;
+  justify-content: space-between;
+  align-items: center;
 
   @include bp(1010px) {
     grid-template-columns: auto auto;
+    justify-content: center;
   }
 
   @include md {
@@ -75,6 +78,5 @@
 
   .font-arrow-icon:hover {
     background-color: rgba(0, 0, 0, 0.3);
-    color: $secondary-color;
   }
 }

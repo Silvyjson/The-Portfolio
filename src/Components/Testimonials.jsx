@@ -22,7 +22,7 @@ const Testimonials = ({ user }) => {
   const breakpointIncrease = 40;
 
   const responsiveSettings = Array.from({ length: 12 }).map((_, index) => {
-    const breakpoint = initialScreenWidth - (index * 30 + index * breakpointIncrease);
+    const breakpoint = initialScreenWidth - (index * 25 + index * breakpointIncrease);
     let slidesToShow = initialSlidesToShow - Math.floor(index * slideReductionFactor * 10) / 10;
     slidesToShow = slidesToShow < 1.2 ? 1.2 : slidesToShow;
     slidesToShow = breakpoint <= 500 ? 1 : slidesToShow;
@@ -56,7 +56,7 @@ const Testimonials = ({ user }) => {
       y: 0,
       transition: {
         delay: 0.5,
-        duration: 2,
+        duration: 1,
       }
     }
   }

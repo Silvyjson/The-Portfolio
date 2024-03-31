@@ -21,6 +21,13 @@
     color: $dark-background-color;
   }
 
+  .avatar-logo {
+    img {
+      background-color: $page-background-color;
+      border: 3px solid $highlight-color;
+    }
+  }
+
   .menu-icon {
     > * {
       background-color: $page-background-color;
@@ -30,22 +37,12 @@
   .nav_section {
     background-color: $dark-background-color;
     color: $primary-color;
-
-    p {
-      border-color: $secondary-color;
-    }
   }
 
   .skills-item {
     img {
       background-color: $page-background-color;
       border-radius: 50%;
-    }
-  }
-
-  .timeline-title {
-    h3 {
-      border-color: $secondary-color;
     }
   }
 

@@ -28,13 +28,11 @@
   }
 
   .avatar-logo {
-    flex: 1;
+    @include display-style($justify: normal);
+    flex: 1.5;
+    height: 50px;
 
     img {
-      width: 50px;
-      aspect-ratio: 5/5;
-      border: 4px ridge $secondary-color;
-
       @include md {
         margin-left: 30px;
       }
@@ -71,7 +69,7 @@
       }
     }
 
-    @include md {
+    @include lg {
       @include display-style($display: none, $direction: column);
       gap: 15px;
       grid-column: 1 / span 2;
@@ -84,7 +82,7 @@
     @include display-style();
     width: 100px;
     height: 40px;
-    border: 2px solid $primary-color;
+    border: 2px solid $highlight-color;
 
     @include md {
       border: none;

@@ -1,8 +1,9 @@
 .contact-container {
   @include display-style($justify: space-between);
-  height: 65vh;
   border-radius: 12px;
   margin: 0;
+  gap: 40px;
+
 
   @include lg {
     @include display-style(
@@ -11,7 +12,6 @@
       $align: normal
     );
     height: 100%;
-    gap: 20px;
   }
 }
 
@@ -27,13 +27,8 @@
   );
   background-color: $primary-color;
   color: $dark-text-color;
-  height: 450px;
   border-radius: 12px;
-  flex: 0.8;
-
-  @include md {
-    width: 100%;
-  }
+  flex: 1;
 }
 
 .contact-border {
@@ -43,9 +38,12 @@
     $align: normal
   );
   height: 100%;
+  flex: 1;
+  gap: 70px;
+
 
   @include lg {
-    gap: 50px;
+    gap: 30px;
   }
 
   h1 {
@@ -111,10 +109,6 @@
   @include display-style($justify: normal, $align: flex-end);
   gap: 30px;
   flex: 1;
-
-  @include lg {
-    align-items: center;
-  }
 }
 
 .social-icon {

@@ -16,7 +16,7 @@ function Contact({ user }) {
             y: 0,
             transition: {
                 delay: 0.5,
-                duration: 2,
+                duration: 1,
             }
         }
     }

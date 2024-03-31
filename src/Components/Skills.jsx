@@ -10,28 +10,27 @@ const Skills = ({ user }) => {
   const fadeInAnimationVariants = {
     initial: {
       opacity: 0,
-      X: 100,
+      y: 50,
     },
-    animate: (index) => ({
-      opacity: 1,
-      X: 0,
-      transition: {
-        delay: 0.1 * index,
-        duration: 1
-      }
-    })
-  }
-
-  const fadeInAnimationVariantspan = {
-    initial: {
-      opacity: 0,
-      y: 20,
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.01
+    animate: (index) => {
+      if (0.1 * index >= 0.5) {
+        return {
+          y: 0,
+          opacity: 1,
+          transition: {
+            delay: 0.5,
+            duration: 1,
+          }
+        }
+      } else {
+        return {
+          y: 0,
+          opacity: 1,
+          transition: {
+            delay: 0.1 * index,
+            duration: 1,
+          }
+        }
       }
     }
   }

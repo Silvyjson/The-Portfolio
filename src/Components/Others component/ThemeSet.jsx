@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
+import { motion } from "framer-motion"
+
 
 const ThemeSet = () => {
   const [dark, setDark] = useState(false);
-  const [fontIcon, setFontIcon] = useState(faMoon); 
+  const [fontIcon, setFontIcon] = useState(faMoon);
 
   const toggleTheme = () => {
     const newDark = !dark;
@@ -32,9 +34,18 @@ const ThemeSet = () => {
   };
 
   return (
-    <div onClick={handleTheme} className="theme-btn">
-      <FontAwesomeIcon icon={fontIcon}  className="theme-font"/>
-    </div>
+    <motion.div
+      drag
+      dragConstraints={{
+        top: -50,
+        left: -50,
+        right: 50,
+        bottom: 50,
+      }}
+      onClick={handleTheme}
+      className="theme-btn" >
+      <FontAwesomeIcon icon={fontIcon} className="theme-font" />
+    </motion.div >
   );
 };
 

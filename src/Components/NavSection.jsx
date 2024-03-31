@@ -1,5 +1,6 @@
 import React from 'react'
 import Menubar from './Others component/MenuBar';
+import logo from '../assets/image/logofull.png'
 
 const NavSection = ({ user }) => {
     const { about } = user;
@@ -26,7 +27,7 @@ const NavSection = ({ user }) => {
     return (
         <nav className='nav_section'>
             <div className="avatar-logo">
-                <img src={about.avatar.url} alt={about.name} />
+                <img src={logo} alt="logo" />
             </div>
             <Menubar />
             <menu className='menuOption'>

@@ -19,7 +19,7 @@
 
   h3 {
     @include display-style();
-    border: 2px solid $dark-text-color;
+    border: 2px solid $highlight-color;
     height: 70px;
     width: 100%;
     padding: 10px;

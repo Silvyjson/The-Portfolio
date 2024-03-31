@@ -18,7 +18,6 @@
   aspect-ratio: 10/5;
   transition: transform 2s ease-in-out;
 
-
   @include bp(700px) {
     min-width: 250px;
   }
@@ -26,7 +25,7 @@
   @include bp(580px) {
     display: block;
     margin: 0 auto;
-    width: 90%
+    width: 90%;
   }
 
   img {
@@ -49,10 +48,9 @@
   }
 
   .fa-icon:hover {
-    width: 100px;
-    border-radius: 10px;
+    width: 120px;
     color: $page-background-color;
-    background-color: $dark-background-color;
+    background-color: $dark-text-color;
   }
 }
 
@@ -60,10 +58,30 @@
   @include font-style();
   @include display-style();
   gap: 5px;
+}
 
-  .tech:hover {
-    background-color: $page-background-color;
-    color: $dark-text-color;
+.project-title {
+  @include display-style();
+  gap: 20px;
+  margin-bottom: 50px;
+
+  h3 {
+    @include display-style();
+    border: 2px solid $highlight-color;
+    height: 70px;
+    width: 100%;
+    padding: 10px;
+
+    @include font-style(
+      $size: 2rem,
+      $weight: 600,
+      $line-height: 3rem,
+      $letter-space: 0.5rem
+    );
+  }
+
+  @include bp(580px) {
+    display: none;
   }
 }
 
