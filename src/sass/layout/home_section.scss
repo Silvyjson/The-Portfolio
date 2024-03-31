@@ -7,6 +7,10 @@
     flex-direction: column-reverse;
     gap: 10px;
   }
+
+  h2 {
+    color: $highlight-color;
+  }
 }
 
 .avatar {
