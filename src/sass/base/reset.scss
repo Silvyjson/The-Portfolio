@@ -80,3 +80,26 @@
   height: 100vh;
   font-size: 20px;
 }
+
+.toggle {
+  @include display-style($justify: flex-end);
+  height: 50px;
+  margin: 20px 0;
+  @include font-style($size: 1.2rem, $line-height: 2rem);
+
+  span {
+    @include display-style;
+    border: 2px solid $secondary-color;
+    padding: 0 10px;
+    gap: 5px;
+    color: $highlight-color;
+
+    :nth-child(2) {
+      border: 2px solid $secondary-color;
+    }
+  }
+
+  span:hover {
+    background-color: rgba(92, 104, 116, 0.1);
+  }
+}

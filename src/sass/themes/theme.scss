@@ -22,10 +22,7 @@
   }
 
   .avatar-logo {
-    img {
-      background-color: $page-background-color;
-      border: 3px solid $highlight-color;
-    }
+    color: $page-background-color;
   }
 
   .menu-icon {
@@ -43,6 +40,20 @@
     img {
       background-color: $page-background-color;
       border-radius: 50%;
+    }
+  }
+
+  .timeline-section {
+    @include bp(550px) {
+      border: 2px solid $dark-text-color;
+    }
+  }
+
+  .timeline-title {
+    h3 {
+      @include bp(550px) {
+        border-color: $dark-text-color;
+      }
     }
   }
 

@@ -27,7 +27,7 @@ const NavSection = ({ user }) => {
     return (
         <nav className='nav_section'>
             <div className="avatar-logo">
-                <img src={logo} alt="logo" />
+                <h1>ThePortfolyo.</h1>
             </div>
             <Menubar />
             <menu className='menuOption'>

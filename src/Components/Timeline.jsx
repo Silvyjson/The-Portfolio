@@ -100,47 +100,21 @@ const Timeline = ({ user }) => {
   }
 
   return (
-    <section className="section" id='timeline'>
-      <motion.div className='min-550'
-        variants={fadeInAnimationVariants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{
-          once: true,
-        }}
-      >
-        <div className='timeline-title'>
-          <h3 onClick={handleGetExperience}>Experience</h3>
-          <h3 onClick={handleGetEducation}>Education</h3>
-        </div>
-        {showExperience && <ExperienceTimeline experienceTimeline={experienceTimeline} />}
-        {showEducation && <EducationTimeline educationTimeline={educationTimeline} />}
-      </motion.div>
-      <div className='max-550'>
-        <motion.span
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{
-            once: true,
-          }}
-        >
-          <h2> Experience</h2>
-          <ExperienceTimeline experienceTimeline={experienceTimeline} />
-        </motion.span>
-        <motion.span
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{
-            once: true,
-          }}
-        >
-          <h2>Education</h2>
-          <EducationTimeline educationTimeline={educationTimeline} />
-        </motion.span>
+    <motion.section className="section timeline-section" id='timeline'
+      variants={fadeInAnimationVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+    >
+      <div className='timeline-title'>
+        <h3 onClick={handleGetExperience}>Experience</h3>
+        <h3 onClick={handleGetEducation}>Education</h3>
       </div>
-    </section>
+      {showExperience && <ExperienceTimeline experienceTimeline={experienceTimeline} />}
+      {showEducation && <EducationTimeline educationTimeline={educationTimeline} />}
+    </motion.section>
   );
 };
 

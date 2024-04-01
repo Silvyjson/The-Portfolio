@@ -1,21 +1,17 @@
-.max-550 {
-  @include display-style($display: none, $direction: column);
-  gap: 100px;
-
+.timeline-section {
   @include bp(550px) {
-    display: flex;
-  }
-}
-
-.min-550 {
-  @include bp(550px) {
-    display: none;
+    border: 2px solid $secondary-color;
   }
 }
 
 .timeline-title {
   @include display-style();
   gap: 20px;
+
+  @include bp(550px) {
+    flex-direction: column;
+    gap: 0;
+  }
 
   h3 {
     @include display-style();
@@ -30,6 +26,10 @@
       $line-height: 3rem,
       $letter-space: 0.5rem
     );
+
+    @include bp(550px) {
+      border-color: $secondary-color;
+    }
   }
 
   h3:hover {
@@ -87,6 +87,7 @@
   );
   gap: 5px;
   flex: 0.5;
+  padding-right: 15px;
 
   @include lg {
     flex: 1;
@@ -106,6 +107,7 @@
 
 .timeline-details {
   flex: 2;
+  padding-left: 15px;
 
   ul {
     padding: 10px 0;

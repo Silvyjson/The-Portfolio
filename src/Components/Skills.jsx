@@ -1,11 +1,15 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Skills = ({ user }) => {
-  const overlayContentRefs = useRef([]);
-
   const { skills } = user;
   const enabledSkills = skills.filter(skill => skill.enabled).reverse();
+  const [showAllSkills, setShowAllSkills] = useState(false);
+
+  const toggleShowAllSkills = () => {
+    setShowAllSkills(!showAllSkills);
+  };
 
   const fadeInAnimationVariants = {
     initial: {
@@ -39,7 +43,7 @@ const Skills = ({ user }) => {
     <section className="section" id="skills">
       <h2>Skills</h2>
       <div className='skills-content'>
-        {enabledSkills.map((skill, index) => (
+        {(showAllSkills ? enabledSkills : enabledSkills.slice(0, 9)).map((skill, index) => (
           <motion.div key={skill._id} className="skills-item"
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -60,6 +64,12 @@ const Skills = ({ user }) => {
             {/* <p>{skill.sequence}</p> */}
           </motion.div>
         ))}
+      </div>
+      <div onClick={toggleShowAllSkills} className="toggle">
+        <span>
+          <p>{showAllSkills ? 'show less' : 'show more'}</p>
+          <FontAwesomeIcon icon={showAllSkills ? 'fa-angle-up' : 'fa-angle-down'} />
+        </span>
       </div>
     </section>
   );

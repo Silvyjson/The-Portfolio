@@ -15,10 +15,6 @@
   }
 
   @include lg {
-    padding: 15px 30px;
-  }
-
-  @include md {
     @include display-grid($column: auto auto, $row: 1fr);
     justify-content: space-between;
     align-items: center;
@@ -32,10 +28,13 @@
     flex: 1.5;
     height: 50px;
 
-    img {
-      @include md {
+    h1 {
+        @include font-style(
+          $size: 2.1rem,
+          $weight: 600,
+          $line-height: 3rem,
+        );
         margin-left: 30px;
-      }
     }
   }
 
@@ -50,12 +49,9 @@
       gap: 25px;
 
       @include lg {
-        gap: 20px;
-      }
-
-      @include md {
         @include display-style($direction: column);
         width: 100%;
+        gap: 20px;
       }
 
       li {
@@ -84,7 +80,7 @@
     height: 40px;
     border: 2px solid $highlight-color;
 
-    @include md {
+    @include lg {
       border: none;
       width: 100%;
       height: auto;
@@ -93,7 +89,7 @@
   p:hover {
     background-color: rgba(92, 104, 116, 0.5);
 
-    @include md {
+    @include lg {
       background-color: transparent;
       transform: scale(1.1);
       font-weight: bolder;

@@ -5,6 +5,10 @@
   padding: 20px 40px 40px;
   position: relative;
 
+  @include sm {
+    padding: 20px 20px 40px;
+  }
+
   textarea,
   input {
     @include font-style();

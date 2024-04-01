@@ -63,21 +63,19 @@
 .project-title {
   @include display-style();
   gap: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
   h3 {
     @include display-style();
-    border: 2px solid $highlight-color;
-    height: 70px;
-    width: 100%;
-    padding: 10px;
-
-    @include font-style(
-      $size: 2rem,
-      $weight: 600,
-      $line-height: 3rem,
-      $letter-space: 0.5rem
-    );
+    border-left: 3px solid $highlight-color;
+    padding-left: 20px;
+    height: 40px;
+    @include font-style($size: 1.4rem, $weight: 600, $letter-space: 0.5rem);
+  }
+  
+  :nth-child(1) {
+    border: none;
+    padding: 0;
   }
 
   @include bp(580px) {
