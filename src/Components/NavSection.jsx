@@ -1,6 +1,5 @@
 import React from 'react'
 import Menubar from './Others component/MenuBar';
-import logo from '../assets/image/logofull.png'
 
 const NavSection = ({ user }) => {
     const { about } = user;
